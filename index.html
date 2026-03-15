@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis 15 Años - Mauren Murillo</title>
+    <style>
+        /* 1. CONFIGURACIÓN GENERAL */
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3e5f5;
+            color: #4a148c;
+            overflow-x: hidden;
+        }
+
+        /* 2. MENÚ DE NAVEGACIÓN */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(123, 31, 162, 0.95);
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        /* 3. SECCIONES */
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        #inicio { background: linear-gradient(135deg, #f3e5f5, #e1bee7); }
+        #detalles { background-color: #ffffff; }
+        #confirmacion { background-color: #f8f0fb; }
+
+        /* 4. TEXTOS */
+        h1 { font-size: clamp(2.5rem, 8vw, 4rem); color: #7b1fa2; margin: 10px 0; }
+        h2 { font-size: 2.5rem; color: #6a1b9a; margin-bottom: 20px; }
+        .cursiva { font-style: italic; font-size: 1.5rem; color: #9c27b0; }
+
+        /* Foto Mauren */
+        .foto-mauren {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 8px solid white;
+            box-shadow: 0px 10px 25px rgba(123, 31, 162, 0.3);
+            margin: 20px 0;
+            transition: transform 0.5s;
+        }
+        .foto-mauren:hover { transform: scale(1.05); }
+
+        /* Cuenta Regresiva */
+        #cuenta-atras {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .tiempo {
+            background: #7b1fa2;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            min-width: 70px;
+        }
+        .tiempo span { display: block; font-size: 1.5rem; font-weight: bold; }
+
+        /* Info Box */
+        .info-box {
+            background: #f3e5f5;
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid #ba68c8;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        /* Formulario */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        input, select, textarea {
+            padding: 12px;
+            border-radius: 10px;
+            border: 2px solid #ce93d8;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: #9c27b0;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0px 5px 15px rgba(156, 39, 176, 0.4);
+            transition: 0.3s;
+        }
+        button:hover { background-color: #7b1fa2; transform: translateY(-3px); }
+
+        /* Mapa responsivo */
+        .mapa-contenedor {
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid #ba68c8;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#detalles">Evento</a>
+        <a href="#confirmacion">Confirmar</a>
+    </nav>
+
+    <section id="inicio">
+        <p class="cursiva">Mis Dulces Quince...</p>
+        <h1>Mauren Murillo</h1>
+        
+        <img src="mifoto.jpg" alt="Mauren Murillo" class="foto-mauren">
+
+        <div id="cuenta-atras">
+            <div class="tiempo"><span id="dias">00</span>Días</div>
+            <div class="tiempo"><span id="horas">00</span>Hrs</div>
+            <div class="tiempo"><span id="minutos">00</span>Min</div>
+        </div>
+
+        <p style="font-size: 1.1rem; max-width: 500px; line-height: 1.6;">
+            "Hay momentos que quedan grabados en el corazón para siempre, y este es uno de ellos."
+        </p>
+    </section>
+
+    <section id="detalles">
+        <h2>Detalles del Evento</h2>
+        <div class="info-box">
+            <p style="font-size: 1.2rem;">
+                <strong>📅 FECHA:</strong> 22 de Diciembre, 2026 <br>
+                <strong>⏰ HORA:</strong> 8:00 PM <br>
+                <strong>📍 LUGAR:</strong> Salón de Eventos "La Magia"
+            </p>
+            
+            <div class="mapa-contenedor">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.5971465248234!2d-76.51860642416186!3d3.447610351896792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a66f0761e0bb%3A0xc3c94d6c4126938d!2sCali%2C%20Valle%20del%20Cauca!5e0!3m2!1ses!2sco!4v1710520000000!5m2!1ses!2sco" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <hr style="border: 0; height: 1px; background-color: #ba68c8; margin: 20px 0;">
+            <p><strong>👗 CÓDIGO DE VESTIMENTA:</strong> Formal / Gala</p>
+        </div>
+    </section>
+
+    <section id="confirmacion">
+        <h2>¿Nos acompañas?</h2>
+        <p class="cursiva" style="margin-bottom: 30px;">Confirma tu asistencia antes del 10 de diciembre</p>
+        
+        <form action="https://formspree.io/f/xpqyjbrg" method="POST">
+            <input type="text" name="Invitado" placeholder="Tu nombre completo" required>
+            
+            <select name="Asistencia">
+                <option value="Confirmado">✨ ¡Sí, allí estaré!</option>
+                <option value="No asistirá">😔 Lo siento, no puedo ir</option>
+            </select>
+
+            <textarea name="Mensaje" placeholder="Escríbeme algo lindo o si tienes alguna alergia..." style="height: 100px;"></textarea>
+
+            <button type="submit">Enviar Confirmación</button>
+        </form>
+
+        <p style="margin-top: 50px; color: #ba68c8; font-size: 0.9rem;">
+            Mauren Murillo • 2026
+        </p>
+    </section>
+
+    <script>
+        // Lógica de la Cuenta Regresiva al 22 de Diciembre de 2026
+        const fechaFiesta = new Date('December 22, 2026 20:00:00').getTime();
+
+        const countdown = setInterval(() => {
+            const ahora = new Date().getTime();
+            const distancia = fechaFiesta - ahora;
+
+            const d = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const h = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById('dias').innerText = d.toString().padStart(2, '0');
+            document.getElementById('horas').innerText = h.toString().padStart(2, '0');
+            document.getElementById('minutos').innerText = m.toString().padStart(2, '0');
+
+            if (distancia < 0) {
+                clearInterval(countdown);
+                document.getElementById('cuenta-atras').innerHTML = "¡ES HOY MI FIESTA! 🎉";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
